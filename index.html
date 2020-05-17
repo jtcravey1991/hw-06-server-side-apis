@@ -12,10 +12,68 @@
 
 <body>
     <header>
-
+        <h1>Weather Dashboard</h1>
     </header>
     <div class="container content">
+        <div class="row">
+            <div class="col-12 col-md-4 cities">
+                <label for="citySearch">
+                    <h4>Search for a City:</h4>
+                </label>
+                <input type="text" id="citySearch" placeholder="city"><button for="citySearch">Search</button>
+                <ul id="citiesList"></ul>
+            </div>
+            <div class="col-12 col-md-8 results">
+                <div class="row">
+                    <div id="currentWeather">
+                        <h2 id="cityDate">City Name and Date</h2>
+                        <p class="currentWeatherText">Temperature: <span id="tempSpan"></span></p>
+                        <p class="currentWeatherText">Humidity: <span id="humiditySpan"></span></p>
+                        <p class="currentWeatherText">Wind Speed: <span id="windSpan"></span></p>
+                        <p class="currentWeatherText">UV Index: <span id="uvSpan"></span></p>
+                    </div>
+                </div>
+                <h3>5-Day Forecast:</h3>
+                
+                <div class="row forcast">
+                    <div class="col-8 col-lg-2 forcastCard">
+                        <p>Date<p>
+                        <p>icon</p>
+                        <p>Temp: <br> 71.84 F</p>
+                        <p>Humidity: <br> 43%</p>
+                    </div>
 
+                    <div class="col-8 col-lg-2 forcastCard">
+                        <p>Date<p>
+                        <p>icon</p>
+                        <p>Temp: <br> 71.84 F</p>
+                        <p>Humidity: <br> 43%</p>
+                    </div>
+
+                    <div class="col-8 col-lg-2 forcastCard">
+                        <p>Date<p>
+                        <p>icon</p>
+                        <p>Temp: <br> 71.84 F</p>
+                        <p>Humidity: <br> 43%</p>
+                    </div>
+
+                    <div class="col-8 col-lg-2 forcastCard">
+                        <p>Date<p>
+                        <p>icon</p>
+                        <p>Temp: <br> 71.84 F</p>
+                        <p>Humidity: <br> 43%</p>
+                    </div>
+
+                    <div class="col-8 col-lg-2 forcastCard">
+                        <p>Date<p>
+                        <p>icon</p>
+                        <p>Temp: <br> 71.84 F</p>
+                        <p>Humidity: <br> 43%</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
     </div>
     <footer>
 
