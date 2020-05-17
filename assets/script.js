@@ -3,21 +3,49 @@ var savedCities = [];
 var lastLoad = "";
 var apiKey = "dc0ae9cc86877232d23ff55ed12fdf38"
 
+initialize();
+
+// initializes the page
+function initialize() {
+    loadCities();
+    loadLastLoad();
+    renderCityList();
+    if (lastLoad !== "") {
+        currentWeatherRender(lastLoad);
+        renderForecast(lastLoad);
+    }
+}
 
 //event listener for adding a city
 $("#cityAddButton").on("click", function () {
     if ($("#citySearch").val() !== "") {
         var city = $("#citySearch").val();
-        savedCities.push($("#citySearch").val())
+        savedCities.push($("#citySearch").val());
+        $("#citySearch").val("");
         currentWeatherRender(city);
         renderForecast(city);
+        saveCities();
+        renderCityList();
+        lastLoad = city;
+        saveLastLoad();
+    }
+});
+
+//adds event listener to clear cities
+$("#clearCities").on("click", function () {
+    var cont = confirm("Are you sure you want to clear your city history?");
+    if (cont === false) {
+        return;
+    }
+    else {
+        savedCities = [];
+        saveCities();
         renderCityList();
     }
 });
 
 // renders list of cities
 function renderCityList() {
-    saveCities();
     $("#citiesList").empty();
     for (var i = 0; i < savedCities.length; i++) {
         var li = $("<li>");
