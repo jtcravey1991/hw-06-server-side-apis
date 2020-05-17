@@ -75,7 +75,7 @@ function currentWeatherRender(city) {
         $("#cityDate").empty();
         $("#cityDate").text(response.name + " " + "(" + moment().format("M/D/YYYY") + ")");
         var weatherIcon = $("<img>");
-        weatherIcon.attr("src", "http://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png")
+        weatherIcon.attr("src", "https://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png")
         weatherIcon.attr("alt", response.weather[0].description);
         $("#cityDate").append(weatherIcon);
 
@@ -86,7 +86,7 @@ function currentWeatherRender(city) {
         $("#windSpan").text(response.wind.speed + " mph");
 
         $.ajax({
-            url: "http://api.openweathermap.org/data/2.5/uvi?appid=" + apiKey + "&lat=" + response.coord.lat + "&lon=" + response.coord.lon + "&cnt=1",
+            url: "https://api.openweathermap.org/data/2.5/uvi?appid=" + apiKey + "&lat=" + response.coord.lat + "&lon=" + response.coord.lon + "&cnt=1",
             method: "GET"
         }).then(function (uvresponse) {
             $("#uvSpan").text(uvresponse.value);
