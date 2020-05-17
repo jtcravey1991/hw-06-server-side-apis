@@ -31,6 +31,17 @@ $("#cityAddButton").on("click", function () {
     }
 });
 
+//adds event listener to city list
+$("#citiesList").on("click", function (event) {
+    if (event.target.parentElement.id === "citiesList") {
+        var city = event.target.textContent;
+        lastLoad = city;
+        saveLastLoad();
+        currentWeatherRender(city);
+        renderForecast(city);
+    }
+});
+
 //adds event listener to clear cities
 $("#clearCities").on("click", function () {
     var cont = confirm("Are you sure you want to clear your city history?");
@@ -115,7 +126,6 @@ function renderForecast(city) {
             url: "https://api.openweathermap.org/data/2.5/onecall?lat=" + response.coord.lat + "&lon=" + response.coord.lon + "&exclude=current,minutely,hourly&appid=" + apiKey,
             method: "GET"
         }).then(function (result) {
-            console.log(result);
             $("#forecastList").empty();
             for (var i = 1; i < 6; i++) {
                 var forecastDiv = $("<div>");
