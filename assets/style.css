@@ -18,6 +18,18 @@ header h1 {
     width: 100%;
 }
 
+.cities ul {
+    list-style-type: none;
+    padding-inline-start: 5px;
+}
+
+#citiesList li {
+    padding: 5px 0;
+    border-bottom-width: 1px;
+    border-bottom-color: black;
+    border-bottom-style: solid;
+}
+
 #currentWeather {
     width: 100%;
     padding-left: 15px;
@@ -38,7 +50,15 @@ header h1 {
     margin: 30px 0;
 }
 
-.forcastCard {
+#uvSpan {
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    padding: 5px 25px;
+    margin-left: 5px;
+}
+
+.forecastCard {
     border-radius: 5px;
     background: #007bff;
     color: #fff;
@@ -49,7 +69,7 @@ header h1 {
     width: max-content;
 }
 
-.forcastCard p {
+.forecastCard p {
     margin: 3px 0;
 }
 
@@ -59,7 +79,7 @@ header h1 {
         font-size: x-large;
     }
 
-    .forcastCard {
+    .forecastCard {
         margin-left: 15px;
     }
 
